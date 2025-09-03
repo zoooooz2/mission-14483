@@ -14,6 +14,11 @@ public class Calc {
         for (int i = 0; i < input.length(); i++) {
             char ch = input.charAt(i);
             if (ch == '+' || ch == '-' || ch == '*') {
+                // 음수 판단: 첫 글자이거나 직전이 *면 음수
+                if (ch == '-' && (i == 0 || tokens.get(tokens.size() - 1).equals("*"))) {
+                    continue; // 숫자와 붙여서 처리
+                }
+
                 if (start < i) tokens.add(input.substring(start, i));
                 tokens.add(String.valueOf(ch));
                 start = i + 1;
