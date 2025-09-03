@@ -8,7 +8,10 @@ public class Calc {
         if(sign.equals("+")){
             return Integer.parseInt(num[0]) + Integer.parseInt(num[2]);
         }
-        return Integer.parseInt(num[0]) + Integer.parseInt(num[2]);
+        else if(sign.equals("-")){
+            return Integer.parseInt(num[0]) - Integer.parseInt(num[2]);
+        }
+        return -1;
     }
 }
 
